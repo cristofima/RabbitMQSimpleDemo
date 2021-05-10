@@ -16,7 +16,7 @@ namespace RabbitMQ.Consumer
             using var channel = connection.CreateModel();
             channel.QueueDeclare("demo-queue", durable: true, exclusive: false, autoDelete: false, arguments: null);
 
-            DirectExchangeConsumer.Consume(channel);
+            FanoutExchangeConsumer.Consume(channel);
         }
     }
 }
